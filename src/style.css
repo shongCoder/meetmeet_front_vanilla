@@ -46,6 +46,11 @@
   font-style: normal;
 }
 
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
 #root {
   margin: 0 auto;
   padding: 0;
