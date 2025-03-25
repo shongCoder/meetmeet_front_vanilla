@@ -1,7 +1,9 @@
-import './input.css';
-import './style.css';
+import "./input.css";
+import "./style.css";
+import { LayoutPage } from "./LayoutPage.js";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
+  ${LayoutPage()}
       <div class="relative bg-meet_black text-meet_white lg:w-full lg:h-[60rem] md:h-[64rem] h-[50.75rem] flex justify-start bg-[url('/img/main/main_visual.png')] bg-cover bg-center">
       <div class="w-full lg:pt-80 md:pt-[23rem] pt-[17.25rem] bg-gradient-to-b from-gray-950/100 to-transparent d">
         <div class="lg:px-[6.25rem] md:px-8 px-5 text-left">
@@ -103,6 +105,6 @@ document.querySelector('#app').innerHTML = `
         />
       </div>
     </div>
-`
+`;
 
-setupCounter(document.querySelector('#counter'))
+setupCounter(document.querySelector("#counter"));
