@@ -91,8 +91,8 @@ export function HeaderWhite() {
   // updateLoginUI();
 
   return /*html*/ `
-  <div id="navbar" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-text-meet_white">
-  <div class="lg:px-[6.25rem] md:px-8 px-5 text-meet_white flex h-full items-center">
+  <div id="header-white" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-text-meet_white fade-in">
+    <div class="lg:px-[6.25rem] md:px-8 px-5 text-meet_white flex h-full items-center">
     <!-- 로고 -->
     <div class="lg:w-52 md:w-[9.125rem] w-28 m-0">
       <a href="/" id="logo-link" onclick="closeMenu()">

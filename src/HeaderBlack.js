@@ -66,8 +66,8 @@ export function HeaderBlack() {
     // updateLoginState();
 
     return /* html */ `
-    <div class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-white opacity-95" id="navbar">
-    <div class="lg:px-[6.25rem] md:px-8 px-5 text-gray-700 flex h-full items-center">
+    <div class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-white opacity-95 fade-in" id="header-black">
+      <div class="lg:px-[6.25rem] md:px-8 px-5 text-gray-700 flex h-full items-center">
       <!-- 로고 -->
       <div class="lg:w-52 md:w-[9.125rem] w-28 m-0">
         <a href="/" onclick="closeMenu()">
