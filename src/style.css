@@ -75,7 +75,7 @@
 .fade-in {
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+  transition: opacity .4s ease-in, transform .7s ease-in-out;
 }
 
 .fade-in.show {
