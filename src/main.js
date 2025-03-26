@@ -1,6 +1,7 @@
+import { Footer } from "./Footer.js";
 import "./input.css";
-import "./style.css";
 import { LayoutPage } from "./LayoutPage.js";
+import "./style.css";
 
 document.querySelector("#app").innerHTML = `
   ${LayoutPage()}
@@ -106,5 +107,7 @@ document.querySelector("#app").innerHTML = `
       </div>
     </div>
 `;
+document.querySelector("#app").appendChild(Footer());
+
 
 setupCounter(document.querySelector("#counter"));
