@@ -23,10 +23,10 @@ export function HeaderBlack() {
           class="lg:flex md:flex lg:justify-center md:justify-center absolute md:static lg:static top-[3.5rem] left-0 w-full bg-white lg:bg-transparent md:bg-transparent transition-all duration-500 ease-in-out overflow-hidden max-h-0 pb-0 opacity-0 lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:pb-0 md:pb-0"
         >
           <ul class="lg:flex md:flex lg:space-x-6 md:space-x-6 py-6 flex flex-col lg:flex-row md:flex-row items-center space-y-4 lg:space-y-0 md:space-y-0 p-0 m-0 text-gray-700">
-            <li><a href="/support" class="nav-link">고객지원</a></li>
-            <li><a href="/influencer" class="nav-link">밋밋셀럽</a></li>
-            <li><a href="/exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
-            <li><a href="/download" class="nav-link">앱 다운로드</a></li>
+            <li><a href="../meetmeet_front_vanilla/support" class="nav-link">고객지원</a></li>
+            <li><a href="../meetmeet_front_vanilla/influencer" class="nav-link">밋밋셀럽</a></li>
+            <li><a href="../meetmeet_front_vanilla/exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
+            <li><a href="../meetmeet_front_vanilla/download" class="nav-link">앱 다운로드</a></li>
           </ul>
         </div>
 
