@@ -1,9 +1,11 @@
+import { LayoutPage } from "../LayoutPage.js";
 import "../input.css";
 import "../style.css";
 
 const base = '/meetmeet_front_vanilla/';
 
 document.querySelector("#contents").innerHTML = `
+${LayoutPage()}
       <div>
         <!-- 웹 버전 -->
         <div class="h-[60rem] bg-[url('/img/download/download_visual.png')] bg-cover lg:bg-center md:bg-right md:bg-[-20rem] lg:px-[6.25rem] flex lg:flex md:flex hidden">

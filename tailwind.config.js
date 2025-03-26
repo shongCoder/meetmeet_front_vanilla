@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./public/**/*.html" // ✅ 이거 꼭 있어야 함
+    "./src/support.js"
   ],
   theme: {
     extend: {
