@@ -8,8 +8,10 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         influencer: resolve(__dirname, 'influencer.html'),
+        support: resolve(__dirname, 'support.html'),
         download: resolve(__dirname, 'download.html'),
         exchange: resolve(__dirname, 'exchange.html'),
+        login: resolve(__dirname, 'login.html'),
       },
     },
   },

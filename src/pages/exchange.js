@@ -1,3 +1,4 @@
+import { Footer } from "../Footer.js";
 import { HeaderBlackF } from "../HeaderBlackF.js";
 import "../input.css";
 import "../style.css";
@@ -132,6 +133,7 @@ ${HeaderBlackF()}
       </div>
     </div>
 `
+document.querySelector("#contents").appendChild(Footer());
 
 const exchangeBtn = document.querySelector("#exchange-btn");
 const noRecord = document.querySelector("#no-record");

@@ -1,3 +1,4 @@
+import { Footer } from "../Footer.js";
 import { LayoutPage } from "../LayoutPage.js";
 import "../input.css";
 import "../style.css";
@@ -236,6 +237,7 @@ ${LayoutPage()}
         </div>
       </div>
 `
+document.querySelector("#contents").appendChild(Footer());
 
 document.querySelectorAll(".accordion-header").forEach((header, index) => {
     header.addEventListener("click", () => {
