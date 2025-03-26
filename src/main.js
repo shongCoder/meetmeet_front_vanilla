@@ -4,7 +4,7 @@ import { LayoutPage } from "./LayoutPage.js";
 import "./style.css";
 
 document.querySelector("#app").innerHTML = `
-  ${LayoutPage()}
+      ${LayoutPage()}
       <div class="relative bg-meet_black text-meet_white lg:w-full lg:h-[60rem] md:h-[64rem] h-[50.75rem] flex justify-start bg-[url('/img/main/main_visual.png')] bg-cover bg-center">
       <div class="w-full lg:pt-80 md:pt-[23rem] pt-[17.25rem] bg-gradient-to-b from-gray-950/100 to-transparent d">
         <div class="lg:px-[6.25rem] md:px-8 px-5 text-left">
@@ -108,6 +108,5 @@ document.querySelector("#app").innerHTML = `
     </div>
 `;
 document.querySelector("#app").appendChild(Footer());
-
 
 // setupCounter(document.querySelector("#counter"));
