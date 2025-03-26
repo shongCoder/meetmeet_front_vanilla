@@ -1,6 +1,6 @@
 export function HeaderWhite() {
   let isOpen = false;
-  let token = localStorage.getItem("token"); // 임시로 토큰 관리
+  let isLogin = localStorage.getItem("isLogin") === "true";
 
   const html = `
     <div id="header-white" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-text-meet_white fade-in show">
@@ -13,14 +13,14 @@ export function HeaderWhite() {
         </div>
 
         <!-- 모바일 메뉴 아이콘 -->
-        <div id="menu-icon" class="lg:hidden md:hidden ml-auto w-5 m-0 cursor-pointer">
+        <div id="menu-icon" class="z-[9999] lg:hidden md:hidden ml-auto w-5 m-0 cursor-pointer">
           <img src="./img/menu_ico.png" alt="Menu Icon" />
         </div>
 
         <!-- 네비게이션 메뉴 -->
         <div
           id="nav-menu"
-          class="lg:flex md:flex lg:justify-center md:justify-center absolute md:static lg:static top-[3.5rem] left-0 w-full bg-meet_light_gray lg:bg-transparent md:bg-transparent transition-all duration-500 ease-in-out overflow-hidden max-h-0 pb-0 opacity-0 lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:pb-0 md:pb-0"
+          class="z-50 lg:flex md:flex lg:justify-center md:justify-center absolute md:static lg:static top-[3.5rem] left-0 w-full bg-meet_light_gray lg:bg-transparent md:bg-transparent transition-all duration-500 ease-in-out overflow-hidden max-h-0 pb-0 opacity-0 lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:pb-0 md:pb-0"
         >
           <ul class="lg:flex md:flex lg:space-x-6 md:space-x-6 py-6 lg:text-meet_white md:text-meet_white flex flex-col lg:flex-row md:flex-row items-center space-y-4 lg:space-y-0 md:space-y-0 p-0 m-0 text-meet_menu">
              <li><a href="../meetmeet_front_vanilla/support" class="nav-link">고객지원</a></li>
@@ -33,13 +33,13 @@ export function HeaderWhite() {
         <!-- 로그인 버튼 -->
         <div
           id="login-container"
-          class="lg:static md:static absolute top-[calc(12rem)] left-0 w-full lg:w-auto md:w-auto flex justify-center md:justify-end lg:justify-end transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 mt-0 lg:max-h-none lg:opacity-100 lg:mt-0 md:max-h-none md:opacity-100 md:mt-0"
+          class="z-50 lg:static md:static absolute top-[calc(12rem)] left-0 w-full lg:w-auto md:w-auto flex justify-center md:justify-end lg:justify-end transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 mt-0 lg:max-h-none lg:opacity-100 lg:mt-0 md:max-h-none md:opacity-100 md:mt-0"
         >
           <button
             id="login-button"
             class="lg:w-32 md:w-32 px-5 py-[0.375rem] bg-meet_pink hover:bg-meet_pink_hover rounded-3xl font-bold flex items-center justify-center whitespace-nowrap"
           >
-            <a href="#" id="login-link">로그인</a>
+            <span id="login-link">로그인</span>
           </button>
         </div>
       </div>
@@ -50,19 +50,26 @@ export function HeaderWhite() {
   container.innerHTML = html;
   const headerElement = container.firstElementChild;
 
-  setTimeout(() => {
+  (() => {
     const navbar = headerElement;
     const logoImg = headerElement.querySelector("#logo-img");
     const navMenu = headerElement.querySelector("#nav-menu");
     const loginContainer = headerElement.querySelector("#login-container");
     const loginLink = headerElement.querySelector("#login-link");
+    const loginButton = headerElement.querySelector("#login-button");
     const menuIcon = headerElement.querySelector("#menu-icon");
     const logoLink = headerElement.querySelector("#logo-link");
     const exchangeLink = headerElement.querySelector("#exchange-link");
     const navLinks = headerElement.querySelectorAll(".nav-link");
 
     function updateMenuUI() {
+
+      console.log("업데이트 UI 실행됨");
+      console.log("navMenu:", navMenu);
+      console.log("loginContainer:", loginContainer);
       if (isOpen) {
+        void navMenu.offsetHeight;
+
         navbar.classList.add("bg-meet_light_gray", "opacity-95");
         navbar.classList.remove("bg-text-meet_white");
         logoImg.src = "./meetmeet_logo_b.png";
@@ -71,6 +78,8 @@ export function HeaderWhite() {
         loginContainer.classList.add("max-h-[100px]", "opacity-100", "mt-14");
         loginContainer.classList.remove("max-h-0", "opacity-0", "mt-0");
       } else {
+        void navMenu.offsetHeight;
+
         navbar.classList.remove("bg-meet_light_gray", "opacity-95");
         navbar.classList.add("bg-text-meet_white");
         logoImg.src = "./meetmeet_logo.png";
@@ -79,9 +88,13 @@ export function HeaderWhite() {
         loginContainer.classList.remove("max-h-[100px]", "opacity-100", "mt-14");
         loginContainer.classList.add("max-h-0", "opacity-0", "mt-0");
       }
+      console.log("햄부기")
     }
 
+    console.log("menuIcon은?", menuIcon);
+
     function toggleMenu() {
+      console.log("왜 안됨")
       isOpen = !isOpen;
       updateMenuUI();
     }
@@ -92,39 +105,34 @@ export function HeaderWhite() {
     }
 
     function updateLoginUI() {
-      loginLink.textContent = token ? "로그아웃" : "로그인";
+      loginLink.textContent = isLogin ? "로그아웃" : "로그인";
     }
 
     function handleLoginClick(event) {
       event.preventDefault();
-      if (token) {
-        localStorage.removeItem("token");
-        token = null;
+      if (isLogin) {
+        localStorage.removeItem("isLogin");
         console.log("로그아웃 완료");
-        window.location.href = "/";
+        window.location.href = "/meetmeet_front_vanilla/";
       } else {
-        window.location.href = "/login";
+        window.location.href = "/meetmeet_front_vanilla/login";
       }
-      updateLoginUI();
     }
 
     function handleExchangeClick(event) {
       event.preventDefault();
       closeMenu();
-      console.log("포인트 환전 이동");
-      window.location.href = "/exchange";
+      window.location.href = "/meetmeet_front_vanilla/exchange";
     }
 
-    // 이벤트 등록
     menuIcon.addEventListener("click", toggleMenu);
     logoLink.addEventListener("click", closeMenu);
     navLinks.forEach((link) => link.addEventListener("click", closeMenu));
     exchangeLink.addEventListener("click", handleExchangeClick);
-    loginLink.addEventListener("click", handleLoginClick);
+    loginButton.addEventListener("click", handleLoginClick);
 
-    // 초기 로그인 버튼 설정
     updateLoginUI();
-  }, 0);
+  })();
 
   return headerElement;
 }
