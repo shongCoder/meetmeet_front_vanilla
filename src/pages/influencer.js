@@ -1,11 +1,11 @@
-import { HeaderBlack } from "../HeaderBlack.js";
+import { HeaderBlackF } from "../HeaderBlackF.js";
 import "../input.css";
 import "../style.css";
 
-const base = '/meetmeet_front_vanilla/';
+const base = "/meetmeet_front_vanilla/";
 
 document.querySelector("#contents").innerHTML = `
-${HeaderBlack()}
+${HeaderBlackF()}
 <div class="w-full md:px-8 px-5 lg:mt-[10.625rem] lg:bg-[url('/img/influencer/bg_img.png')] md:bg-[url('/img/influencer/bg_img_tab.png')] bg-[url('/img/influencer/bg_img_mob.png')] bg-no-repeat lg:h-[180rem] md:h-[180rem] h-[170rem] pt-20 bg-[length:100%_auto]">
           <img
             src="${base}/img/influencer/target.png"
@@ -157,4 +157,4 @@ ${HeaderBlack()}
           </div>
         </div>
       </div>
-`
+`;

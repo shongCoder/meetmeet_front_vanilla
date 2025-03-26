@@ -1,4 +1,4 @@
-export function HeaderBlack() {
+export function HeaderBlackF() {
     let isOpen = false;
     let isLoggedIn = false; // 임시 로그인 상태 (실제는 세션 또는 토큰 검사)
 
@@ -9,19 +9,6 @@ export function HeaderBlack() {
     // 메뉴 토글 함수
     window.toggleMenu = function () {
         isOpen = !isOpen;
-        //   if (isOpen) {
-        //     navMenu.classList.remove("max-h-0", "opacity-0", "pb-0");
-        //     navMenu.classList.add("max-h-[300px]", "pb-16", "opacity-100");
-
-        //     loginBtnWrapper.classList.remove("max-h-0", "opacity-0", "mt-0");
-        //     loginBtnWrapper.classList.add("max-h-[100px]", "opacity-100", "mt-14");
-        //   } else {
-        //     navMenu.classList.add("max-h-0", "opacity-0", "pb-0");
-        //     navMenu.classList.remove("max-h-[300px]", "pb-16", "opacity-100");
-
-        //     loginBtnWrapper.classList.add("max-h-0", "opacity-0", "mt-0");
-        //     loginBtnWrapper.classList.remove("max-h-[100px]", "opacity-100", "mt-14");
-        //   }
     };
 
     // 메뉴 닫기
@@ -64,7 +51,7 @@ export function HeaderBlack() {
     // updateLoginState();
 
     return /* html */ `
-    <div class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-white opacity-95 fade-in " id="header-black" onload="initLayout()">
+    <div class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-white opacity-95 fade-in show" id="header-black" onload="initLayout()">
       <div class="lg:px-[6.25rem] md:px-8 px-5 text-gray-700 flex h-full items-center">
       <!-- 로고 -->
       <div class="lg:w-52 md:w-[9.125rem] w-28 m-0">

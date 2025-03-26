@@ -3,19 +3,20 @@ export function HeaderWhite() {
   let token = localStorage.getItem("token"); // 임시로 토큰 관리
 
   // 메뉴 열고 닫기
-  function toggleMenu() {
+  window.toggleMenu = function() {
     isOpen = !isOpen;
-    updateMenuUI();
+    // updateMenuUI();
+    // console.log("button on")
   }
 
   // 메뉴 강제로 닫기 (로고 클릭, 메뉴 이동 시)
-  function closeMenu() {
+  window.closeMenu = function() {
     isOpen = false;
     updateMenuUI();
   }
 
   // 메뉴 상태에 따른 클래스 조정
-  function updateMenuUI() {
+  window.updateMenuUI = function() {
     const navbar = document.getElementById("navbar");
     const logoImg = document.getElementById("logo-img");
     const navMenu = document.getElementById("nav-menu");
@@ -50,7 +51,7 @@ export function HeaderWhite() {
   }
 
   // 포인트 환전 클릭 핸들러
-  function handleExchangeClick(event) {
+  window.handleExchangeClick = function(event) {
     event.preventDefault();
     closeMenu();
     // 여기서 추가 기능 실행 가능
@@ -59,7 +60,7 @@ export function HeaderWhite() {
   }
 
   // 로그인/로그아웃 상태 처리
-  function handleLoginClick(event) {
+  window.handleLoginClick = function(event) {
     event.preventDefault();
 
     if (token) {
@@ -77,7 +78,7 @@ export function HeaderWhite() {
   }
 
   // 로그인 버튼 텍스트 초기화
-  function updateLoginUI() {
+  window.updateLoginUI = function() {
     const loginLink = document.getElementById("login-link");
 
     if (token) {
@@ -91,7 +92,7 @@ export function HeaderWhite() {
   // updateLoginUI();
 
   return /*html*/ `
-  <div id="header-white" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-text-meet_white fade-in show">
+  <div id="header-white" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-text-meet_white fade-in show" onload="initLayout()">
     <div class="lg:px-[6.25rem] md:px-8 px-5 text-meet_white flex h-full items-center">
     <!-- 로고 -->
     <div class="lg:w-52 md:w-[9.125rem] w-28 m-0">
@@ -101,7 +102,7 @@ export function HeaderWhite() {
     </div>
 
     <!-- 모바일 메뉴 아이콘 -->
-    <div id="menu-icon" class="lg:hidden md:hidden ml-auto w-5 m-0 cursor-pointer" onclick="toggleMenu()">
+    <div id="menu-icon" class="lg:hidden md:hidden ml-auto w-5 m-0 cursor-pointer" onclick="${toggleMenu()}">
       <img src="./img/menu_ico.png" alt="Menu Icon" />
     </div>
 

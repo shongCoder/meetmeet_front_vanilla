@@ -110,4 +110,4 @@ document.querySelector("#app").innerHTML = `
 document.querySelector("#app").appendChild(Footer());
 
 
-setupCounter(document.querySelector("#counter"));
+// setupCounter(document.querySelector("#counter"));
