@@ -170,6 +170,63 @@ ${LayoutPage()}
         </div>
       </div>
 
+      <div class="lg:pt-[12.5rem] md:pt-[12.5rem] pt-[3.75rem] lg:px-[6.25rem] md:px-8 px-5 w-full ">
+  <div>
+    <img src="./img/support/AO.png" class="lg:w-[6.25rem] md:w-[6.25rem] w-20" />
+  </div>
+  <div class="text-meet_black text-center font-bold lg:text-[3.25rem] md:text-[3.25rem] text-[1.75rem] mb-2">
+    자주 묻는 질문
+  </div>
+  <div class="text-meet_text text-center lg:text-[1.25rem] md:text-[1.25rem] text-[0.875rem] mt-2 mb-8 w-full">
+    Frequently Asked Questions
+  </div>
+  <div class="lg:px-[13.75rem] w-full">
+    <div class="accordion-item">
+      <div class="flex items-center justify-between mt-10 cursor-pointer accordion-header">
+        <span class="text-left lg:text-[1.5rem] md:text-[1.5rem] text-[1.125rem] font-semibold flex-1">
+          가입은 어디서 하나요?
+        </span>
+        <img src="./img/support/add.png" class="accordion-icon lg:w-6 md:w-6 w-4 transition-transform duration-300 rotate-0" />
+      </div>
+      <div class="accordion-content overflow-hidden transition-[max-height] duration-500 ease-in-out max-h-0">
+        <p class="text-meet_text lg:text-[1.25rem] md:text-[1.25rem] text-[0.875rem] mt-5 leading-8">
+          밋밋 MeetMeet 서비스는 단순한 플랫폼을 넘어, 사람과 사람을 연결하고 당신의 일상에 특별함을 더하는 공간힙니다. 다양한 기능을 통해 새로운 경험을 제안합니다.
+        </p>
+      </div>
+      <div class="w-full bg-meet_gray h-[1px] mt-6"></div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="flex items-center justify-between mt-10 cursor-pointer accordion-header">
+        <span class="text-left lg:text-[1.5rem] md:text-[1.5rem] text-[1.125rem] font-semibold flex-1">
+          미성년자도 이용이 가능한가요?
+        </span>
+        <img src="./img/support/add.png" class="accordion-icon lg:w-6 md:w-6 w-4 transition-transform duration-300 rotate-0" />
+      </div>
+      <div class="accordion-content overflow-hidden transition-[max-height] duration-500 ease-in-out max-h-0">
+        <p class="text-meet_text lg:text-[1.25rem] md:text-[1.25rem] text-[0.875rem] mt-5 leading-8">
+          밋밋 MeetMeet 서비스는 단순한 플랫폼을 넘어, 사람과 사람을 연결하고 당신의 일상에 특별함을 더하는 공간힙니다. 다양한 기능을 통해 새로운 경험을 제안합니다.
+        </p>
+      </div>
+      <div class="w-full bg-meet_gray h-[1px] mt-6"></div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="flex items-center justify-between mt-10 cursor-pointer accordion-header">
+        <span class="text-left lg:text-[1.5rem] md:text-[1.5rem] text-[1.125rem] font-semibold flex-1">
+          탈퇴 어떻게 하나요?
+        </span>
+        <img src="./img/support/add.png" class="accordion-icon lg:w-6 md:w-6 w-4 transition-transform duration-300 rotate-0" />
+      </div>
+      <div class="accordion-content overflow-hidden transition-[max-height] duration-500 ease-in-out max-h-0">
+        <p class="text-meet_text lg:text-[1.25rem] md:text-[1.25rem] text-[0.875rem] mt-5 leading-8">
+          앱 > 설정 > 탈퇴하기 메뉴를 통해서 탈퇴하실 수 있습니다.
+        </p>
+      </div>
+      <div class="w-full bg-meet_gray h-[1px] mt-6"></div>
+    </div>
+  </div>
+</div>
       
         <div class="text-meet_text text-center mt-9 lg:mb-[6.25rem] md:mb-[6.25rem] mb-[3.75rem]">
           <span>더 궁금하신 내용이 있나요? </span>

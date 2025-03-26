@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         influencer: resolve(__dirname, 'influencer.html'),
         download: resolve(__dirname, 'download.html'),
+        exchange: resolve(__dirname, 'exchange.html'),
       },
     },
   },

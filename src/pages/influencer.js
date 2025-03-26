@@ -31,7 +31,7 @@ ${HeaderBlackF()}
             <img src="${base}/img/influencer/girls.png" class="w-[50rem]" />
           </div>
   
-          <!-- {/* 박스 모음 */} -->
+          <!-- 박스 모음 -->
           <div class="mt-[-1rem] relative z-10">
             <div
               style=" box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.04)"
