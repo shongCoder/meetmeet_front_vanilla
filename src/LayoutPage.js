@@ -1,7 +1,6 @@
 import { HeaderWhite } from "./HeaderWhite.js";
 import { HeaderBlack } from "./HeaderBlack.js";
 import { ModalComp } from "./modalcomp.js";
-import { Hamberger } from "./hamberger.js";
 
 export function LayoutPage() {
   let isWhiteHeader = true;

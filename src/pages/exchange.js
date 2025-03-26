@@ -5,8 +5,10 @@ import "../style.css";
 
 const base = '/meetmeet_front_vanilla/';
 
+const header = HeaderBlackF();
+document.body.prepend(header);
+
 document.querySelector("#contents").innerHTML = `
-${HeaderBlackF()}
      <div>
       <div class="lg:mt-[10.625rem] md:mt-[10.625rem] mt-[8.75rem] text-meet_black text-center font-bold lg:text-[3.25rem] md:text-[3.25rem] text-[1.75rem]">
         포인트 환전

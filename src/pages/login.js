@@ -5,8 +5,10 @@ import "../style.css";
 
 const base = "/meetmeet_front_vanilla/";
 
+const header = HeaderBlackF();
+document.body.prepend(header);
+
 document.querySelector("#contents").innerHTML = `
-${HeaderBlackF()}
 <div class="w-full lg:px-[6.25rem] md:px-8 px-5 flex lg:justify-between lg:flex-row md:flex-col lg:pt-[13.375rem] md:pt-[13.375rem] pt-[7.5rem] pb-[8.75rem]">
       <!-- 로그인 필드 -->
       <div class="lg:w-[25rem] md:w-full w-full lg:px-0 md:px-[3.75rem]">
