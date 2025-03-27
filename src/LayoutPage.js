@@ -26,12 +26,12 @@ export function LayoutPage() {
     if (topBtn) topBtn.classList.toggle("hidden", scrollY <= 200);
   });
 
-  window.initLayout = () => {
-    const modal = document.getElementById("modal");
-    if (modal) {
-      setTimeout(() => modal.classList.remove("hidden"), 3000);
-    }
-  };
+  // window.initLayout = () => {
+  //   const modal = document.getElementById("modal");
+  //   if (modal) {
+  //     setTimeout(() => modal.classList.remove("hidden"), 3000);
+  //   }
+  // };
 }
 
 function renderHeader(scrollY) {

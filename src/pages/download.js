@@ -2,9 +2,12 @@ import { Footer } from "../Footer.js";
 import { HeaderWhite } from "../HeaderWhite.js";
 import { LayoutPage } from "../LayoutPage.js";
 import "../input.css";
+import { ModalComponent } from "../modal.js";
 import "../style.css";
 
 const base = '/meetmeet_front_vanilla/';
+
+ModalComponent();
 
 document.querySelector("#contents").innerHTML = `<div id="page-body"></div>`;
 

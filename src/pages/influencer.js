@@ -1,9 +1,12 @@
 import { Footer } from "../Footer.js";
 import { HeaderBlackF } from "../HeaderBlackF.js";
 import "../input.css";
+import { ModalComponent } from "../modal.js"; // 모달 컴포넌트
 import "../style.css";
 
 const base = "/meetmeet_front_vanilla/";
+
+ModalComponent();
 
 const header = HeaderBlackF();
 document.body.prepend(header);

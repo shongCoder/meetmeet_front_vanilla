@@ -1,6 +1,10 @@
+import { openModal } from "./modal.js";
+
 export function HeaderWhite() {
   let isLogin = localStorage.getItem("isLogin") === "true";
   let isOpen = false;
+
+  const base = "/meetmeet_front_vanilla/";
 
   const container = document.createElement("div");
   container.id = "header-white";
@@ -21,10 +25,10 @@ export function HeaderWhite() {
 
       <div id="nav-menu" class="absolute md:static lg:static top-[3.5rem] left-0 w-full bg-meet_light_gray lg:bg-transparent md:bg-transparent transition-all duration-500 ease-in-out overflow-hidden max-h-0 pb-0 opacity-0 lg:flex md:flex lg:justify-center md:justify-center lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:pb-0 md:pb-0">
         <ul class="lg:flex md:flex lg:space-x-6 md:space-x-6 py-6 lg:text-meet_white md:text-meet_white flex flex-col lg:flex-row md:flex-row items-center space-y-4 lg:space-y-0 md:space-y-0 p-0 m-0 text-meet_menu">
-          <li><a href="/support" class="nav-link">고객지원</a></li>
-          <li><a href="/influencer" class="nav-link">밋밋셀럽</a></li>
-          <li><a href="/exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
-          <li><a href="/download" class="nav-link">앱 다운로드</a></li>
+          <li><a href="${base}support" class="nav-link">고객지원</a></li>
+          <li><a href="${base}influencer" class="nav-link">밋밋셀럽</a></li>
+          <li><a href="${base}exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
+          <li><a href="${base}download" class="nav-link">앱 다운로드</a></li>
         </ul>
       </div>
 
@@ -43,6 +47,7 @@ export function HeaderWhite() {
     const loginLink = container.querySelector("#login-link");
     const logoImg = container.querySelector("#logo-img");
     const navLinks = container.querySelectorAll(".nav-link");
+    const exchangeLink = container.querySelector("#exchange-link");
 
     function updateMenuUI() {
       if (isOpen) {
@@ -85,12 +90,22 @@ export function HeaderWhite() {
     loginLink.addEventListener("click", (e) => {
       e.preventDefault();
       if (isLogin) {
-        // ✅ 로그아웃 처리
         localStorage.removeItem("isLogin");
         window.location.href = "/";
       } else {
-        // ✅ 로그인 페이지로 이동
-        window.location.href = "/meetmeet_front_vanilla/login";
+        window.location.href = `${base}login`;
+      }
+    });
+
+    // ✅ 포인트 환전 - 모달 조건 처리
+    exchangeLink.addEventListener("click", (e) => {
+      if (!isLogin) {
+        e.preventDefault();
+        openModal(
+          "로그인",
+          "접근이 불가능 합니다.\n로그인 후 이용해 주세요",
+          `${base}login`
+        );
       }
     });
   }, 0);

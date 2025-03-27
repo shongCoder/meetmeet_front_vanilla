@@ -1,6 +1,10 @@
+import { openModal } from "./modal.js";
+
 export function HeaderBlack() {
   let isOpen = false;
-  let isLogin = localStorage.getItem("isLogin");
+  let isLogin = localStorage.getItem("isLogin") === "true";
+
+  const base = "/meetmeet_front_vanilla/";
 
   const container = document.createElement("div");
   container.id = "header-black";
@@ -9,29 +13,25 @@ export function HeaderBlack() {
 
   container.innerHTML = `
     <div class="lg:px-[6.25rem] md:px-8 px-5 text-meet_menu flex h-full items-center">
-      <!-- 로고 -->
       <div class="lg:w-52 md:w-[9.125rem] w-28 m-0">
         <a href="/" id="logo-link">
           <img id="logo-img" src="./meetmeet_logo_b.png" alt="MeetMeet Logo" />
         </a>
       </div>
 
-      <!-- 모바일 메뉴 아이콘 -->
       <div id="menu-icon" class="lg:hidden md:hidden ml-auto w-5 m-0 cursor-pointer">
         <img src="./img/menu_ico.png" alt="Menu Icon" />
       </div>
 
-      <!-- 네비게이션 메뉴 -->
       <div id="nav-menu" class="absolute md:static lg:static top-[3.5rem] left-0 w-full bg-meet_white lg:bg-transparent md:bg-transparent transition-all duration-500 ease-in-out overflow-hidden max-h-0 pb-0 opacity-0 lg:flex md:flex lg:justify-center md:justify-center lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:pb-0 md:pb-0">
         <ul class="lg:flex md:flex lg:space-x-6 md:space-x-6 py-6 flex flex-col lg:flex-row md:flex-row items-center space-y-4 lg:space-y-0 md:space-y-0 p-0 m-0 text-meet_menu">
-          <li><a href="/support" class="nav-link">고객지원</a></li>
-          <li><a href="/influencer" class="nav-link">밋밋셀럽</a></li>
-          <li><a href="/exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
-          <li><a href="/download" class="nav-link">앱 다운로드</a></li>
+          <li><a href="${base}support" class="nav-link">고객지원</a></li>
+          <li><a href="${base}influencer" class="nav-link">밋밋셀럽</a></li>
+          <li><a href="${base}exchange" class="nav-link" id="exchange-link">포인트 환전</a></li>
+          <li><a href="${base}download" class="nav-link">앱 다운로드</a></li>
         </ul>
       </div>
 
-      <!-- 로그인 버튼 -->
       <div id="login-container" class="absolute top-[calc(12rem)] left-0 w-full lg:w-auto md:w-auto flex justify-center md:justify-end lg:justify-end transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 mt-0 lg:static md:static lg:max-h-none lg:opacity-100 lg:mt-0 md:max-h-none md:opacity-100 md:mt-0">
         <button id="login-button" class="lg:w-32 md:w-32 px-5 py-[0.375rem] text-meet_white bg-meet_pink hover:bg-meet_pink_hover rounded-3xl font-bold flex items-center justify-center whitespace-nowrap">
           <span id="login-link">${isLogin ? "로그아웃" : "로그인"}</span>
@@ -40,7 +40,6 @@ export function HeaderBlack() {
     </div>
   `;
 
-  // ✅ Top 버튼 추가
   const topBtn = document.createElement("button");
   topBtn.id = "topButton";
   topBtn.className =
@@ -55,13 +54,13 @@ export function HeaderBlack() {
     topBtn.classList.toggle("hidden", window.scrollY <= 200);
   });
 
-  // ✅ 이벤트 연결
   setTimeout(() => {
     const menuIcon = container.querySelector("#menu-icon");
     const navMenu = container.querySelector("#nav-menu");
     const loginContainer = container.querySelector("#login-container");
     const loginLink = container.querySelector("#login-link");
     const navLinks = container.querySelectorAll(".nav-link");
+    const exchangeLink = container.querySelector("#exchange-link");
 
     function updateMenuUI() {
       if (isOpen) {
@@ -93,12 +92,21 @@ export function HeaderBlack() {
 
     loginLink.addEventListener("click", (e) => {
       e.preventDefault();
-      isLogin = localStorage.getItem("isLogin");
+      isLogin = localStorage.getItem("isLogin") === "true";
       if (isLogin) {
         localStorage.removeItem("isLogin");
         window.location.href = "/";
       } else {
-        window.location.href = "/meetmeet_front_vanilla/login";
+        window.location.href = `${base}login`;
+      }
+    });
+
+    // ✅ 포인트 환전 클릭 시 로그인 확인
+    exchangeLink.addEventListener("click", (e) => {
+      isLogin = localStorage.getItem("isLogin") === "true";
+      if (!isLogin) {
+        e.preventDefault();
+        openModal("로그인", "접근이 불가능 합니다.\n로그인 후 이용해 주세요", `${base}login`);
       }
     });
   }, 0);
