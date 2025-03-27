@@ -1,5 +1,4 @@
-import{F as l}from"./style-Dg5fZUiV.js";import{L as m}from"./LayoutPage-CC2vB_9e.js";const e="/meetmeet_front_vanilla/";document.querySelector("#contents").innerHTML=`
-${m()}
+import{M as d,F as t}from"./style-GL8eZkAd.js";import{H as l,L as m}from"./LayoutPage-Lo3GdsqP.js";const e="/meetmeet_front_vanilla/";d();document.querySelector("#contents").innerHTML='<div id="page-body"></div>';const i=l();document.body.prepend(i);document.querySelector("#page-body").innerHTML=`
       <div>
         <!-- 웹 버전 -->
         <div class="h-[60rem] bg-[url('/img/download/download_visual.png')] bg-cover lg:bg-center md:bg-right md:bg-[-20rem] lg:px-[6.25rem] flex lg:flex md:flex hidden">
@@ -47,4 +46,4 @@ ${m()}
           </div>
         </div>
       </div>
-`;document.querySelector("#contents").appendChild(l());
+`;document.querySelector("#contents").appendChild(t());m();window.initLayout();

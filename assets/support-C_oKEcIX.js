@@ -1,5 +1,4 @@
-import{F as d}from"./style-Dg5fZUiV.js";import{L as o}from"./LayoutPage-CC2vB_9e.js";const i="/meetmeet_front_vanilla/";document.querySelector("#contents").innerHTML=`
-${o()}
+import{M as d,F as o}from"./style-GL8eZkAd.js";import{H as n,L as a}from"./LayoutPage-Lo3GdsqP.js";const i="/meetmeet_front_vanilla/";d();document.querySelector("#contents").innerHTML='<div id="page-body"></div>';const c=n();document.body.prepend(c);document.querySelector("#page-body").innerHTML=`
 <div class="relative w-full bg-meet_black text-meet_white lg:w-full lg:h-[56.125rem] md:h-[50.375rem] h-[50.75rem] flex flex-col items-center lg:px-[6.25rem] md:px-8 px-5">
         <!-- 텍스트 & 버튼 (그라데이션 위에 위치) -->
         <div class="relative z-20 w-full lg:pt-80 md:pt-[16.1875rem] pt-[10rem]">
@@ -229,4 +228,4 @@ ${o()}
           </span>
         </div>
       </div>
-`;document.querySelector("#contents").appendChild(d());document.querySelectorAll(".accordion-header").forEach((l,m)=>{l.addEventListener("click",()=>{const t=document.querySelectorAll(".accordion-content")[m],r=document.querySelectorAll(".accordion-icon")[m],s=t.classList.contains("max-h-[1000px]");document.querySelectorAll(".accordion-content").forEach(e=>{e.classList.remove("max-h-[1000px]"),e.classList.add("max-h-0")}),document.querySelectorAll(".accordion-icon").forEach(e=>{e.classList.remove("rotate-45"),e.classList.add("rotate-0")}),s||(t.classList.remove("max-h-0"),t.classList.add("max-h-[1000px]"),r.classList.remove("rotate-0"),r.classList.add("rotate-45"))})});
+`;document.querySelector("#contents").appendChild(o());a();window.initLayout();document.querySelectorAll(".accordion-header").forEach((l,m)=>{l.addEventListener("click",()=>{const t=document.querySelectorAll(".accordion-content")[m],r=document.querySelectorAll(".accordion-icon")[m],s=t.classList.contains("max-h-[1000px]");document.querySelectorAll(".accordion-content").forEach(e=>{e.classList.remove("max-h-[1000px]"),e.classList.add("max-h-0")}),document.querySelectorAll(".accordion-icon").forEach(e=>{e.classList.remove("rotate-45"),e.classList.add("rotate-0")}),s||(t.classList.remove("max-h-0"),t.classList.add("max-h-[1000px]"),r.classList.remove("rotate-0"),r.classList.add("rotate-45"))})});

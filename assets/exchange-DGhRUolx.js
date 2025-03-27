@@ -1,5 +1,4 @@
-import{F as l}from"./style-Dg5fZUiV.js";import{H as a}from"./HeaderBlackF-Br7GbxZO.js";document.querySelector("#contents").innerHTML=`
-${a()}
+import{F as l}from"./style-GL8eZkAd.js";import{H as n}from"./HeaderBlackF-gWE7QmeZ.js";const a=n();document.body.prepend(a);document.querySelector("#contents").innerHTML=`
      <div>
       <div class="lg:mt-[10.625rem] md:mt-[10.625rem] mt-[8.75rem] text-meet_black text-center font-bold lg:text-[3.25rem] md:text-[3.25rem] text-[1.75rem]">
         포인트 환전

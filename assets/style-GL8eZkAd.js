@@ -1,4 +1,4 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&n(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();function d(){const a=`
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&a(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function a(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();function d(){const l=`
                 <div class="w-full items-start text-meet_text overflow-hidden">
       <div class="lg:px-[6.25rem] md:px-8 px-5 text-left">
         <div class="lg:w-[9.125rem] w-[6.875rem] lg:mt-[3.75rem] mt-4 !ml-0">
@@ -196,4 +196,18 @@
         </div>
       </div>
     </div>
-    `,l=document.createElement("div");l.innerHTML=a;const i=l.firstElementChild;return setTimeout(()=>{const n=i.querySelector("#toggleBtn"),e=i.querySelector("#toggleIcon"),t=i.querySelector("#toggleBox");let s=!1;n.addEventListener("click",()=>{s=!s,e.classList.toggle("rotate-180",s),e.classList.toggle("rotate-0",!s),t.classList.toggle("max-h-[1000px]",s),t.classList.toggle("max-h-0",!s)})},0),i}export{d as F};
+    `,n=document.createElement("div");n.innerHTML=l;const i=n.firstElementChild;return setTimeout(()=>{const a=i.querySelector("#toggleBtn"),e=i.querySelector("#toggleIcon"),t=i.querySelector("#toggleBox");let s=!1;a.addEventListener("click",()=>{s=!s,e.classList.toggle("rotate-180",s),e.classList.toggle("rotate-0",!s),t.classList.toggle("max-h-[1000px]",s),t.classList.toggle("max-h-0",!s)})},0),i}function o(){const l=document.createElement("div");l.id="modal",l.className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 hidden",l.innerHTML=`
+    <div class="bg-white rounded-[0.75rem] pt-4 px-6 pb-5 shadow-lg lg:w-[28.75rem] md:w-[28.75rem] w-[18.75rem] text-center">
+      <div class="lg:text-[1.25rem] md:text-[1.25rem] text-[1rem] font-semibold mb-3 flex items-center justify-between w-full">
+        <span class="opacity-0">-</span>
+        <p id="modal-title" class="text-center flex-1">제목</p>
+        <img src="./img/icon-x-mono.png" class="ml-auto cursor-pointer" id="modal-close" />
+      </div>
+      <p id="modal-content" class="lg:text-[1rem] md:text-[1rem] text-[0.8125rem] text-gray-600 mt-3 mb-3 whitespace-pre-line">
+        내용
+      </p>
+      <button id="modal-ok" class="mt-3 lg:text-[1rem] md:text-[1rem] text-[0.75rem] bg-meet_pink text-white font-bold lg:py-4 md:py-4 py-3 lg:rounded-[0.75rem] md:rounded-[0.75rem] rounded-[0.5rem] w-full">
+        확인
+      </button>
+    </div>
+  `,document.body.appendChild(l)}function m(l,n,i=null){const a=document.getElementById("modal");if(!a)return;a.classList.remove("hidden"),document.getElementById("modal-title").textContent=l,document.getElementById("modal-content").textContent=n;const e=()=>{a.classList.add("hidden"),i&&(window.location.href=i)};document.getElementById("modal-close").onclick=e,document.getElementById("modal-ok").onclick=e}export{d as F,o as M,m as o};
