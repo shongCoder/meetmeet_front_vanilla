@@ -5,6 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./src/support.js"
   ],
+  safelist: [
+    "max-h-0",
+    "max-h-[300px]",
+    "pb-0",
+    "pb-16",
+    "opacity-0",
+    "opacity-100",
+    "max-h-[100px]",
+    "mt-0",
+    "mt-14",
+  ],
   theme: {
     extend: {
       colors: {
