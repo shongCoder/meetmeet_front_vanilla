@@ -1,12 +1,19 @@
 import { Footer } from "../Footer.js";
+import { HeaderWhite } from "../HeaderWhite.js";
 import { LayoutPage } from "../LayoutPage.js";
 import "../input.css";
 import "../style.css";
 
 const base = '/meetmeet_front_vanilla/';
 
-document.querySelector("#contents").innerHTML = `
-${LayoutPage()}
+document.querySelector("#contents").innerHTML = `<div id="page-body"></div>`;
+
+// ✅ 헤더 추가 (body에 직접 붙이기)
+const header = HeaderWhite();
+document.body.prepend(header);
+
+// ✅ 본문 내용 추가 (page-body 안에)
+document.querySelector("#page-body").innerHTML = `
       <div>
         <!-- 웹 버전 -->
         <div class="h-[60rem] bg-[url('/img/download/download_visual.png')] bg-cover lg:bg-center md:bg-right md:bg-[-20rem] lg:px-[6.25rem] flex lg:flex md:flex hidden">
@@ -56,3 +63,6 @@ ${LayoutPage()}
       </div>
 `
 document.querySelector("#contents").appendChild(Footer());
+
+LayoutPage();
+window.initLayout();
