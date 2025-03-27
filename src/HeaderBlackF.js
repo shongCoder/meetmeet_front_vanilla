@@ -1,6 +1,6 @@
 export function HeaderBlackF() {
   let isOpen = false;
-  let token = localStorage.getItem("token");
+  let isLogin = localStorage.getItem("isLogin") === "true"; // 문자열 비교!
 
   const html = `
     <div id="header-black" class="lg:h-20 fixed top-0 left-0 w-full z-50 h-[3.5rem] bg-white opacity-95 fade-in show">
@@ -30,7 +30,7 @@ export function HeaderBlackF() {
         <!-- 로그인 버튼 -->
         <div id="login-container" class="lg:static md:static absolute top-[calc(12rem)] left-0 w-full lg:w-auto md:w-auto flex justify-center md:justify-end lg:justify-end transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 mt-0 lg:max-h-none md:max-h-none lg:opacity-100 md:opacity-100 lg:mt-0 md:mt-0">
           <button id="login-button" class="lg:w-32 md:w-32 px-5 py-[0.375rem] text-white bg-pink-500 hover:bg-pink-600 rounded-3xl font-bold flex items-center justify-center whitespace-nowrap">
-            <a href="#" id="login-link">로그인</a>
+            <a href="#" id="login-link">${isLogin ? "로그아웃" : "로그인"}</a>
           </button>
         </div>
       </div>
@@ -109,11 +109,11 @@ export function HeaderBlackF() {
 
     loginLink.addEventListener("click", (e) => {
       e.preventDefault();
-      if (token) {
-        localStorage.removeItem("token");
+      if (isLogin) {
+        localStorage.removeItem("isLogin");
         window.location.href = "/";
       } else {
-        window.location.href = "/login";
+        window.location.href = "/meetmeet_front_vanilla/login";
       }
     });
   }, 0);

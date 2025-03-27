@@ -1,5 +1,5 @@
 export function HeaderWhite() {
-  const token = localStorage.getItem("token");
+  let isLogin = localStorage.getItem("isLogin") === "true";
   let isOpen = false;
 
   const container = document.createElement("div");
@@ -30,7 +30,7 @@ export function HeaderWhite() {
 
       <div id="login-container" class="absolute top-[calc(12rem)] left-0 w-full lg:w-auto md:w-auto flex justify-center md:justify-end lg:justify-end transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 mt-0 lg:static md:static lg:max-h-none lg:opacity-100 lg:mt-0 md:max-h-none md:opacity-100 md:mt-0">
         <button id="login-button" class="lg:w-32 md:w-32 px-5 py-[0.375rem] bg-meet_pink hover:bg-meet_pink_hover rounded-3xl font-bold flex items-center justify-center whitespace-nowrap">
-          <span id="login-link">로그인</span>
+          <span id="login-link">${isLogin ? "로그아웃" : "로그인"}</span>
         </button>
       </div>
     </div>
@@ -43,37 +43,32 @@ export function HeaderWhite() {
     const loginLink = container.querySelector("#login-link");
     const logoImg = container.querySelector("#logo-img");
     const navLinks = container.querySelectorAll(".nav-link");
-  
+
     function updateMenuUI() {
       if (isOpen) {
         navMenu.classList.add("max-h-[300px]", "pb-16", "opacity-100");
         navMenu.classList.remove("max-h-0", "pb-0", "opacity-0");
-  
+
         loginContainer.classList.add("max-h-[100px]", "opacity-100", "mt-14");
         loginContainer.classList.remove("max-h-0", "opacity-0", "mt-0");
-  
-        // ✅ 배경색 변경
+
         container.classList.add("bg-meet_light_gray", "opacity-95");
         container.classList.remove("bg-text-meet_white");
-  
-        // ✅ 로고 이미지 변경
+
         logoImg.src = "./meetmeet_logo_b.png";
       } else {
         navMenu.classList.remove("max-h-[300px]", "pb-16", "opacity-100");
         navMenu.classList.add("max-h-0", "pb-0", "opacity-0");
-  
+
         loginContainer.classList.remove("max-h-[100px]", "opacity-100", "mt-14");
         loginContainer.classList.add("max-h-0", "opacity-0", "mt-0");
-  
-        // ✅ 배경 원래대로
+
         container.classList.remove("bg-meet_light_gray", "opacity-95");
         container.classList.add("bg-text-meet_white");
-  
-        // ✅ 로고도 원래대로
+
         logoImg.src = "./meetmeet_logo.png";
       }
     }
-  
 
     menuIcon.addEventListener("click", () => {
       isOpen = !isOpen;
@@ -89,11 +84,13 @@ export function HeaderWhite() {
 
     loginLink.addEventListener("click", (e) => {
       e.preventDefault();
-      if (token) {
-        localStorage.removeItem("token");
+      if (isLogin) {
+        // ✅ 로그아웃 처리
+        localStorage.removeItem("isLogin");
         window.location.href = "/";
       } else {
-        window.location.href = "/login";
+        // ✅ 로그인 페이지로 이동
+        window.location.href = "/meetmeet_front_vanilla/login";
       }
     });
   }, 0);
